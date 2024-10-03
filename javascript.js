@@ -38,6 +38,10 @@ function operate(operator, num1, num2){
 function updateDisplay(num){
     display.textContent += num;
 }
+//clear display function
+function clearDisplay(){
+    display.textContent = '';
+}
 //document queries 
 const body = document.querySelector(".body");
 const display = document.querySelector(".display");
@@ -54,12 +58,13 @@ body.addEventListener("click",(e)=>{
         return;
     }else if(option === 'clear'){
         console.log("will clear");
+        clearDisplay();
         return;
     }else{
         console.log("number");
+        //display the inputs
         updateDisplay(option);
     }
 })
-    //display the inputs
     //pass the inputs into operate 
     //display operate output 
