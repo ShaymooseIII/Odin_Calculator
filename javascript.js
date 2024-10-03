@@ -48,6 +48,8 @@ const display = document.querySelector(".display");
 
 //event listener for the calculator body
 body.addEventListener("click",(e)=>{
+    //Declare variable
+    option = '';
     if(e.target.tagName === 'BUTTON'){
         //take in the button inputs into variables
         option = e.target.textContent;
@@ -60,7 +62,9 @@ body.addEventListener("click",(e)=>{
         console.log("will clear");
         clearDisplay();
         return;
-    }else{
+    }else if(typeof Number(option) === 'number'){
+        console.log(option)
+        console.log(Number(option))
         console.log("number");
         //display the inputs
         updateDisplay(option);
