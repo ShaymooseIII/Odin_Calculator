@@ -19,7 +19,7 @@ function divide(num1,num2){
 let firstNum = 0;
 let secondNum = 0;
 let operator = '';
-const operators = ['+', "-", "/", "x", "="]
+const operators = ['+', "-", "/", "x"]
 //operate Function
 function operate(operator, num1, num2){
     switch(operator){
@@ -58,7 +58,11 @@ body.addEventListener("click",(e)=>{
     if(operators.includes(option)){
         console.log("in operator");
         return;
-    }else if(option === 'clear'){
+    }else if(option === '='){
+        console.log("operate");
+        return;
+    }
+    else if(option === 'clear'){
         console.log("will clear");
         clearDisplay();
         return;
