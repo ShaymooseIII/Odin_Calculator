@@ -61,7 +61,7 @@ function reset(){
 //document queries 
 const body = document.querySelector(".body");
 const display = document.querySelector(".display");
-
+const clear = document.querySelector("#clear");
 //event listener for the calculator body
 body.addEventListener("click",(e)=>{
     //Declare variable
@@ -105,15 +105,18 @@ body.addEventListener("click",(e)=>{
     else if(option === 'clear'){
         console.log("will clear");
         clearDisplay();
-        reset();
     }else if(typeof Number(option) === 'number'){
         //display the inputs
         updateDisplay(option);
     }
     //storing the display value
     displayValue = +display.textContent;
-    console.log(typeof displayValue);
     lastOption = option;
+})
+
+clear.addEventListener('dblclick', ()=>{
+    console.log("reset");
+    reset();
 })
     //pass the inputs into operate 
     //display operate output 
