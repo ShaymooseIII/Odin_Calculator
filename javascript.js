@@ -100,7 +100,15 @@ body.addEventListener("click",(e)=>{
         console.log(firstNum, secondNum)
         console.log("in operator");
     }else if(option === '='){
-        console.log("operate");
+        //storing the displayValue into separate variables
+        if(!firstNum){
+            firstNum = displayValue;
+        }else{
+            secondNum = displayValue;
+        }
+        clearDisplay();
+        solve();
+        reset();
     }
     else if(option === 'clear'){
         console.log("will clear");
