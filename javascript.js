@@ -35,6 +35,14 @@ function operate(operator, num1 = 0, num2 = 0){
     }
 
 }
+//function to handle all variable changes involved with operate
+function solve(){
+    answer = (operate(operator,firstNum,secondNum));
+    firstNum = answer;
+    secondNum = false;
+    updateDisplay(answer);
+
+}
 //update display function 
 function updateDisplay(num){
     display.textContent += num;
@@ -74,10 +82,7 @@ body.addEventListener("click",(e)=>{
                 clearDisplay();
             }
             console.log(`displayValue:${displayValue}`);
-            answer = (operate(operator,firstNum,secondNum));
-            firstNum = answer;
-            secondNum = false;
-            updateDisplay(answer)
+            solve();
         }
         //storing the displayValue into separate variables
         if(!firstNum){
@@ -87,10 +92,7 @@ body.addEventListener("click",(e)=>{
         }
         clearDisplay();
         if(firstNum && secondNum){
-            answer = operate(operator,firstNum,secondNum);
-            firstNum = answer;
-            secondNum = false;
-            updateDisplay(answer);
+            solve();
         }
         //storing the operator
         operator = option;
