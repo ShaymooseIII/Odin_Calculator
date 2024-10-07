@@ -71,10 +71,12 @@ body.addEventListener("click",(e)=>{
         option = e.target.textContent;
         console.log(option);
     }
+    //clear the display to string operations together
     if(answer && operator){
         clearDisplay();
         answer = false;
     }
+    //checking if the option button clicked is a operator
     if(operators.includes(option)){
         if(operator){
             console.log(lastOption);
