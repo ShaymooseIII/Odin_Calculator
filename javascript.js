@@ -22,7 +22,7 @@ let answer = false;
 let operator = false;
 const operators = ['+', "-", "/", "x"]
 //operate Function
-function operate(operator, num1, num2){
+function operate(operator, num1 = 0, num2 = 0){
     switch(operator){
         case '+':
             return add(num1,num2);
