@@ -16,9 +16,10 @@ function divide(num1,num2){
     return num1 / num2;
 }
 //Declaration of variables
-let firstNum = 0;
-let secondNum = 0;
-let operator = '';
+let firstNum = false;
+let secondNum = false;
+let answer = false;
+let operator = false;
 const operators = ['+', "-", "/", "x"]
 //operate Function
 function operate(operator, num1, num2){
@@ -42,6 +43,13 @@ function updateDisplay(num){
 function clearDisplay(){
     display.textContent = '';
 }
+function reset(){
+    firstNum = false;
+    secondNum = false;
+    answer = false;
+    operator = false;
+
+}
 //document queries 
 const body = document.querySelector(".body");
 const display = document.querySelector(".display");
@@ -55,24 +63,55 @@ body.addEventListener("click",(e)=>{
         option = e.target.textContent;
         console.log(option);
     }
+    if(answer && operator){
+        clearDisplay();
+        answer = false;
+    }
     if(operators.includes(option)){
+        if(operator){
+            console.log(lastOption);
+            if(operators.includes(lastOption)){
+                clearDisplay();
+            }
+            console.log(`displayValue:${displayValue}`);
+            answer = (operate(operator,firstNum,secondNum));
+            firstNum = answer;
+            secondNum = false;
+            updateDisplay(answer)
+        }
+        //storing the displayValue into separate variables
+        if(!firstNum){
+            firstNum = displayValue;
+        }else{
+            secondNum = displayValue;
+        }
+        clearDisplay();
+        if(firstNum && secondNum){
+            answer = operate(operator,firstNum,secondNum);
+            firstNum = answer;
+            secondNum = false;
+            updateDisplay(answer);
+        }
+        //storing the operator
+        operator = option;
+        // clearDisplay();
+        console.log(firstNum, secondNum)
         console.log("in operator");
-        return;
     }else if(option === '='){
         console.log("operate");
-        return;
     }
     else if(option === 'clear'){
         console.log("will clear");
         clearDisplay();
-        return;
+        reset();
     }else if(typeof Number(option) === 'number'){
-        console.log(option)
-        console.log(Number(option))
-        console.log("number");
         //display the inputs
         updateDisplay(option);
     }
+    //storing the display value
+    displayValue = +display.textContent;
+    console.log(typeof displayValue);
+    lastOption = option;
 })
     //pass the inputs into operate 
     //display operate output 
