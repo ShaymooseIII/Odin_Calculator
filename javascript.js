@@ -31,6 +31,10 @@ function operate(operator, num1 = 0, num2 = 0){
         case 'x':
             return multiply(num1,num2);
         case '/':
+            if(num2 === 0){
+                display.textContent = "no /";
+                return 0;
+            }
             return divide(num1,num2);
     }
 
