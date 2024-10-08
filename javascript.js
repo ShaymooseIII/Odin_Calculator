@@ -59,6 +59,7 @@ function updateDisplay(num){
 function clearDisplay(){
     display.textContent = '';
 }
+//function to reset all variables
 function reset(){
     firstNum = false;
     secondNum = false;
@@ -135,5 +136,3 @@ clear.addEventListener('dblclick', ()=>{
     console.log("reset");
     reset();
 })
-    //pass the inputs into operate 
-    //display operate output 
