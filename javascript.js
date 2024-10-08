@@ -46,6 +46,10 @@ function solve(){
 //update display function 
 function updateDisplay(num){
     display.textContent += num;
+    if(display.textContent.length>=18){
+        display.textContent = "number to big"
+    }
+    
 }
 //clear display function
 function clearDisplay(){
