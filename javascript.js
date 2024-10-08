@@ -92,7 +92,6 @@ body.addEventListener("click",(e)=>{
                 clearDisplay();
             }
             console.log(`displayValue:${displayValue}`);
-            solve();
         }
         //storing the displayValue into separate variables
         if(!firstNum){
