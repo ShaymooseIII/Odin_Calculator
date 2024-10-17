@@ -5,6 +5,7 @@ body{
 button{
     width: 50px;
     height: 50px;
+    border-radius: 10px;
 }
 button:not(#clear){
     font-size: 28px;
@@ -14,11 +15,16 @@ button:not(#clear){
     flex-direction: column;
     align-items: center;
     width: 300px;
+    border: 2px solid black;
+    margin-top: 100px;
 }
 .body{
     display: flex;
     flex-direction: column;
     gap: 4px;
+    background-color: black;
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 .display{
     border: 1px solid black;
@@ -28,6 +34,7 @@ button:not(#clear){
     justify-content: end;
     align-items: end;
     font-size: 32px;
+    background-color: rgb(206, 207, 201);
 }
 
 .top,
@@ -40,4 +47,17 @@ button:not(#clear){
 
 .mid{
     flex-wrap: wrap;
+}
+
+.top button{
+    background-color: rgb(52, 104, 150);
+}
+
+.mid button,
+#zero{
+    background-color: rgb(53, 49, 49);
+}
+
+#equals{
+    background-color: grey;
 }
